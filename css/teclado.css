@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333; /* Mudei para um tom mais escuro para destacar o branco */
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Coloca o H1 em cima e o teclado embaixo */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center;     /* Centraliza horizontalmente */
+    min-height: 100vh;       /* Faz o body ocupar a altura toda da tela */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.teclado {
+    display: flex;
+    /* Caso o teclado fique maior que a tela em monitores pequenos, 
+       esta linha permite rolar para os lados sem quebrar o layout */
+    overflow-x: auto; 
+    padding: 20px;
+}
+
+.oitava {
+    display: flex;
+    position: relative;
+}
+
+.branca {
+    background-color: #fff;
+    width: 50px;
+    height: 300px;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.preta {
+    position: absolute;
+    background-color: #000;
+    width: 30px;
+    height: 160px;
+    z-index: 1; /* Garante que fique acima da branca */
+    cursor: pointer;
+}
+
+/* Seletores para as teclas pretas */
+[data-nota^=cs] { left: 35px; }
+[data-nota^=ds] { left: 85px; }
+[data-nota^=fs] { left: 185px; }
+[data-nota^=gs] { left: 235px; }
+[data-nota^=as] { left: 285px; }
+
+.selecionada {
+    background-color: #070 !important;
+}
+
+footer {
+    margin-top: 20px;
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+    opacity: 0.7; /* Deixa o texto um pouco mais discreto */
+}
+
+footer p {
+    margin: 0;
+}
